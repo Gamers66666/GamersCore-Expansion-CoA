@@ -93,3 +93,10 @@ The project aims to expand playable CoA content without automatically excluding 
 **Nota / Note:** World of Warcraft y sus marcas y recursos pertenecen a sus respectivos titulares. Este es un proyecto comunitario no oficial y no afiliado a Blizzard Entertainment.
 
 World of Warcraft and its trademarks and assets belong to their respective owners. This is an unofficial community project and is not affiliated with Blizzard Entertainment.
+
+## Módulo Retail Backport
+
+Guía de instalación, script PowerShell y estado de validación del módulo de objetos/equipo:
+[modules/retail-backport/README.md](modules/retail-backport/README.md).
+
+El instalador está en [modules/retail-backport/install.ps1](modules/retail-backport/install.ps1). Los MPQ no están incluidos en Git debido a su gran tamaño; consulta la guía para su distribución y validación.
