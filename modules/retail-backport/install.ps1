@@ -12,14 +12,15 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $expected = @(
-    'patch-0.MPQ',
-    'patch-1.MPQ',
-    'patch-6.MPQ',
-    'patch-7.MPQ',
-    'patch-8.MPQ',
-    'patch-9.MPQ',
-    'patch-D.MPQ',
-    'patch-GAM.MPQ'
+    'patch-NAA.MPQ',
+    'patch-NAB.MPQ',
+    'patch-NAC.MPQ',
+    'patch-NAD.MPQ',
+    'patch-NAE.MPQ',
+    'patch-NAF.MPQ',
+    'patch-NAG.MPQ',
+    'patch-NAH.MPQ',
+    'patch-NAI.MPQ'
 )
 
 $missing = @($expected | Where-Object {
@@ -32,19 +33,18 @@ if ($missing.Count -gt 0) {
 
 Write-Host 'Retail Backport — instalación' -ForegroundColor Cyan
 Write-Host "Destino: $ClientData"
-Write-Host 'Comprueba que el cliente esté cerrado y que el destino sea su carpeta Data.'
+Write-Host 'Confirma que el cliente esté cerrado y que el destino sea la carpeta Data correcta.'
 
-$confirm = Read-Host 'Escribe INSTALAR para copiar los ocho MPQ'
+$confirm = Read-Host 'Escribe INSTALAR para copiar los nueve MPQ'
 if ($confirm -cne 'INSTALAR') {
     Write-Host 'Cancelado. No se copiaron archivos.' -ForegroundColor Yellow
     exit 0
 }
 
 foreach ($name in $expected) {
-    $source = Join-Path $PackageDirectory $name
     $destination = Join-Path $ClientData $name
     if (Test-Path -LiteralPath $destination) {
-        throw "Ya existe $destination. Para evitar sobrescribir un MPQ existente, la instalación se detuvo."
+        throw "Ya existe $destination. Para evitar sobrescribir un MPQ existente, la instalación se detuvo sin copiar archivos."
     }
 }
 
