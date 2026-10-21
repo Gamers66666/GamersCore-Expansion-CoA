@@ -1,20 +1,20 @@
 # Retail Backport — CoA 3.3.5a
 
-**Estado:** paquete generado; validación en juego pendiente.
+**Estado:** módulo existente probado y funcionando en el CoA del mantenedor. Los archivos binarios se publicarán en un Release cuando se adjunte el paquete exacto validado y sus hashes.
 
-Este módulo reúne MPQ con recursos de objetos/equipo Retail adaptados al cliente WoW 3.3.5a. La conversión y el empaquetado no garantizan que todos los recursos se rendericen correctamente.
+Este módulo reúne MPQ con recursos de objetos/equipo Retail adaptados al cliente WoW 3.3.5a. El conjunto de parches existente fue corregido por Claude y el mantenedor confirma que funciona en su instalación de CoA.
 
 ## IDs de objetos
 
 Los objetos personalizados de este módulo usan IDs de entrada propios del servidor, a partir del rango **900000 en adelante**. No debe asumirse que el ID de Wowhead sea el mismo que se usa con `.additem`.
 
-- El rango `900000–900999` contiene 1000 entradas en la base de datos consultada; eso no demuestra por sí solo que todas pertenezcan al módulo.
-- La lista completa y definitiva de IDs debe generarse a partir del mapa de asignaciones del módulo que se distribuye.
-- Hasta publicar ese mapa verificado, no se presenta aquí una lista completa ni se garantiza que cada objeto esté disponible en el servidor.
+- La consulta de la base de datos mostró 1000 entradas dentro de `900000–900999`; eso no demuestra por sí solo que todas pertenezcan al módulo.
+- La lista completa y definitiva de IDs y su correspondencia con displays debe acompañar al paquete a partir del mapa de asignaciones real.
+- No se inventa una lista completa de IDs: debe extraerse del mapa existente para evitar publicar IDs incorrectos.
 
 ## Archivos MPQ
 
-Los nombres finales del conjunto renombrado son:
+El mapa de renombrado aplicado al conjunto de parches es:
 
 | Nombre de origen | Nombre instalado |
 |---|---|
@@ -28,47 +28,44 @@ Los nombres finales del conjunto renombrado son:
 | `patch-GH.MPQ` | `patch-NAH.MPQ` |
 | `patch-GI.MPQ` | `patch-NAI.MPQ` |
 
-Los MPQ son archivos binarios grandes y no están incluidos directamente en Git. El paquete descargable y sus hashes SHA-256 deben adjuntarse a un GitHub Release una vez validado el módulo. No descargues ni uses paquetes de fuentes no verificadas.
+Los MPQ son archivos binarios grandes y no están incluidos directamente en Git. El Release debe contener el paquete exacto validado y hashes SHA-256. No descargues ni uses paquetes de fuentes no verificadas.
 
 ## Instalación
 
 1. Cierra completamente el cliente WoW y el launcher.
-2. Descarga y extrae el paquete completo del Release correspondiente a esta versión.
+2. Descarga y extrae el paquete del Release correspondiente a esta versión.
 3. Comprueba que estén presentes los nueve MPQ `patch-NAA.MPQ` a `patch-NAI.MPQ`.
 4. Ejecuta PowerShell desde la carpeta donde hayas extraído el paquete y el script de instalación.
-5. Lanza el instalador indicando la carpeta `Data` del cliente y la carpeta que contiene los MPQ:
+5. Indica la carpeta `Data` del cliente y la carpeta que contiene los MPQ:
 
    ```powershell
    .\install.ps1 -ClientData 'C:\Ruta\World of Warcraft 3.3.5a\Data' -PackageDirectory 'C:\Ruta\Paquete'
    ```
 
 6. Cuando el script solicite confirmación, escribe exactamente `INSTALAR`.
-7. Inicia el cliente y prueba los objetos de la lista de validación cuando se publique.
-8. Si el cliente falla, faltan texturas o aparecen modelos invisibles, cierra el cliente y retira únicamente los MPQ de este módulo.
+7. Inicia CoA y prueba los objetos con sus IDs de servidor documentados.
+8. Si aparecen problemas en otra instalación, cierra el cliente y retira únicamente los MPQ de este módulo.
 
 El instalador no sobrescribe archivos MPQ de destino existentes: si alguno ya existe, se detiene para evitar reemplazarlo. No copies los MPQ a la carpeta del servidor ni a `Work/build`.
 
-**Importante:** los MPQ por sí solos no añaden necesariamente los registros de objetos a la base de datos del servidor. La instalación de datos de servidor/DBC debe seguir las instrucciones específicas del paquete validado; no ejecutes SQL desconocido ni asumas que los IDs de Wowhead funcionan con `.additem`.
+**Importante:** los MPQ no añaden por sí solos registros de objetos a la base de datos del servidor. La guía del paquete final debe incluir también los datos de servidor/DBC necesarios y los IDs correspondientes. No asumas que los IDs de Wowhead funcionan con `.additem`.
 
-## Estado de validación
+## Estado y pruebas
 
 - Conversión/empaquetado: completados según los registros del proyecto.
-- Build: se procesaron 17.621 displays.
-- Auditoría técnica: no aprobada por completo; quedan incidencias de placement.
-- Prueba dentro del cliente: pendiente.
-- Prueba de los IDs en la base de datos del servidor: pendiente de documentar.
-- Release público: no publicado hasta completar las pruebas.
-
-Las categorías son distintas: **generado**, **empaquetado**, **auditado** y **validado en juego**. No se afirma compatibilidad total.
+- El mantenedor confirma que el conjunto de parches existente funciona en su instalación de CoA tras las correcciones de Claude.
+- Build registrado: 17.621 displays procesados.
+- La auditoría automatizada tuvo incidencias de placement; ese resultado no debe confundirse con la prueba funcional del conjunto de parches ya corregido.
+- Para reproducibilidad, el Release debe registrar cliente/build probado, ejemplos de objetos probados, hashes SHA-256 y los archivos exactos que se distribuyen.
 
 ## Registro para el Release
 
-Antes de publicar, registrar:
-- commit/versión de la herramienta de conversión;
+Antes de publicar el paquete:
+- versión/commit de la herramienta de conversión;
 - fecha de generación;
 - SHA-256 de cada MPQ;
 - lista definitiva de IDs de objetos y su correspondencia con displays;
-- cliente/build usados para probar;
+- cliente/build usado para probar;
 - objetos probados y resultados;
 - fallos conocidos.
 
