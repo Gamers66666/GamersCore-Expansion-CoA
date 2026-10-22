@@ -96,6 +96,8 @@ World of Warcraft and its trademarks and assets belong to their respective owner
 
 ## Módulo Retail Backport
 
+**Diagnóstico de objetos «?»:** las causas posibles incluyen caché obsoleta, SQL ausente o de otra versión, IDs que no coinciden y tablas `Item.dbc`/`ItemDisplayInfo.dbc` sobrescritas por un MPQ posterior. `patch-NAI.MPQ` no forma parte de los ocho archivos de la release v1.0.2. La versión actual no está validada para todas las combinaciones de cliente CoA/CoA Server Manager; el arreglo definitivo requiere integrar y probar las tablas para el cliente objetivo, no solo cambiar instrucciones.
+
 **Aviso de compatibilidad:** la release `retail-backport-coa-v1.0.2` reemplaza tablas de objetos del cliente y no está validada como compatible con todas las instalaciones CoA/CoA Server Manager. No la instales encima de otros parches sin comprobar conflictos. El arreglo definitivo requiere reconstruir y probar las tablas para el cliente objetivo; limpiar Cache y aplicar el SQL no resuelven una tabla sobrescrita.
 
 **Compatibility warning:** release `retail-backport-coa-v1.0.2` replaces client item tables and is not validated for every CoA/CoA Server Manager installation. Do not install it over other patches without checking conflicts. A definitive fix requires rebuilding and testing the tables for the target client; clearing Cache and applying SQL do not fix an overridden table.
