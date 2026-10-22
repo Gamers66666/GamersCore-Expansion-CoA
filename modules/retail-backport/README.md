@@ -1,5 +1,9 @@
 # CoA — 17,000+ converted items / Más de 17.000 objetos convertidos
 
+> **Compatibility warning — release v1.0.2:** This package replaces client item-table data and has not been proven compatible with every CoA client or Server Manager patch set. Do not treat it as a universal fix. Until a merge-safe package is rebuilt and tested, use it only with the exact compatible client setup; if you already have other CoA patches, do not install over them blindly.
+
+> **Aviso de compatibilidad — versión v1.0.2:** Este paquete sustituye datos de las tablas de objetos del cliente y no se ha demostrado que sea compatible con todas las instalaciones de CoA ni con todos los conjuntos de parches de CoA Server Manager. No es una solución universal. Hasta reconstruir y probar un paquete que integre las tablas de forma segura, úsalo solo con la configuración de cliente compatible exacta; si ya tienes otros parches de CoA, no lo instales encima a ciegas.
+
 [English](#english) | [Español](#español)
 
 ## English
