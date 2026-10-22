@@ -25,12 +25,12 @@ GamersCore — CoA Expansion is a community project to expand World of Warcraft 
 
 **Límites / Limitations**
 - Retail y WotLK usan formatos y sistemas distintos; algunos recursos pueden requerir adaptación adicional o no ser compatibles.
-- Que un recurso se convierta o se incluya en un MPQ no garantiza que se vea o funcione correctamente en el juego.
-- La cobertura real debe confirmarse mediante auditorías y pruebas dentro del cliente.
+- Que un recurso se convierta o se incluya en un MPQ no garantiza por sí solo que se vea o funcione correctamente en el juego.
+- El módulo publicado fue probado correctamente en el cliente objetivo; las limitaciones de compatibilidad específicas de cada instalación siguen siendo posibles.
 
 - Retail and WotLK use different formats and systems; some assets may need further adaptation or may be incompatible.
-- Conversion or inclusion in an MPQ does not guarantee correct rendering or in-game behavior.
-- Actual coverage must be confirmed through audits and in-client testing.
+- Conversion or inclusion in an MPQ alone does not guarantee correct rendering or in-game behavior.
+- The published module was successfully tested in the target client; installation-specific compatibility limitations may still apply.
 
 ### Alcance 2 — Contenido y sistemas: WotLK → Midnight
 ### Scope 2 — Content and systems: WotLK → Midnight
@@ -56,31 +56,33 @@ Ampliar progresivamente el contenido que falta en CoA, evaluando e incorporando 
 
 ## Estado del proyecto / Project status
 
-**Estado conocido al 19 de octubre de 2026 / Known status as of 19 October 2026**
+**Estado actualizado al 22 de octubre de 2026 / Status updated 22 October 2026**
 
-- **Objetos/equipo / Items and gear:** se ejecutó el empaquetado MPQ y la herramienta informó que la lectura de comprobación coincidía con los archivos empaquetados (*read-back identical*).
-- **MPQ packaging:** the MPQ packaging step completed, and the tool reported that the read-back matched the packaged files (*read-back identical*).
-- **Validación en juego / In-game validation:** pendiente; todavía no debe considerarse que los objetos estén plenamente validados.
-- **Auditoría y presentación visual / Audit and visual review:** algunas comprobaciones de calidad no se han confirmado como superadas; el estado de la generación de hojas de vista previa (*sheet*) debe verificarse.
-- **Preview sheets:** completion of the preview-sheet step (*sheet*) still needs to be verified.
+- **Objetos/equipo / Items and gear:** módulo Retail → WotLK completado y probado correctamente en el cliente objetivo. El módulo se considera funcional según las pruebas realizadas.
+- **Items and gear:** the Retail → WotLK module is complete and was successfully tested in the target client. The module is considered working based on the tests performed.
+- **Empaquetado MPQ / MPQ packaging:** completado. La herramienta confirmó que la lectura posterior coincidía con los archivos empaquetados (*read-back identical*).
+- **MPQ packaging:** completed. The tool confirmed that the read-back matched the packaged files (*read-back identical*).
+- **Validación en juego / In-game validation:** completada satisfactoriamente para el módulo de objetos/equipo.
+- **In-game validation:** successfully completed for the items and gear module.
+- **Estado del módulo / Module status:** terminado, probado y funcional. No es necesario repetir su conversión ni su empaquetado.
 
-Los paquetes generados son artefactos de trabajo y no deben considerarse una versión final o un lanzamiento validado hasta completar la revisión y las pruebas en juego.
+El módulo de objetos/equipo queda cerrado como trabajo completado. Las tareas futuras deben centrarse en otros contenidos y sistemas jugables, sin reconstruir ni modificar este módulo.
 
-The generated packages are work artifacts, not a final release or a validated release, until review and in-game testing are complete.
+The items and gear module is closed as completed work. Future tasks should focus on other content and gameplay systems, without rebuilding or modifying this module.
 
 ---
 
 ## Criterios de validación / Validation criteria
 
-El proyecto distinguirá entre:
+El proyecto distingue entre:
 1. **Convertido / Converted:** se generó un recurso o paquete.
 2. **Auditado / Audited:** se ejecutaron las comprobaciones técnicas pertinentes y se registraron sus resultados.
 3. **Validado en juego / In-game validated:** se probó en el cliente objetivo.
 4. **Funcional / Working:** el comportamiento esperado se confirmó en las condiciones documentadas.
 
-Estas categorías no son equivalentes. No se marcará como funcional algo que solo se haya convertido o empaquetado.
+Estas categorías no son equivalentes. El módulo de objetos/equipo completó el empaquetado y las pruebas en juego; su estado es **terminado y funcional**. Para el resto del contenido, el estado debe registrarse según las pruebas realmente realizadas.
 
-These categories are not equivalent. An asset will not be marked as working merely because it was converted or packaged.
+These categories are not equivalent. The items and gear module completed packaging and in-game testing; its status is **completed and working**. For all other content, status must reflect the tests actually performed.
 
 ---
 
