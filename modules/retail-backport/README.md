@@ -69,6 +69,19 @@ Este módulo modifica la visualización de objetos del cliente CoA 3.3.5a compat
 
 El archivo item_template.sql de esta versión está destinado al administrador del servidor y debe coincidir exactamente con estos MPQ. No se importa automáticamente. Revísalo y confirma que sea compatible con el core/esquema antes de importarlo en la base de datos world correcta. Los MPQ por sí solos no crean las entradas del servidor. Nunca combines un SQL de otra versión.
 
+### Diagnóstico completo: por qué otros jugadores ven objetos como ?
+
+El símbolo `?` no tiene una única causa y no demuestra por sí solo que la descarga esté incompleta. Hay que separar los datos del cliente de los datos del servidor.
+
+1. **Caché del cliente.** Si el cliente ya se inició antes de instalar los archivos, puede conservar datos temporales antiguos. Cierra WoW y el launcher y elimina la carpeta `Cache`; el cliente la volverá a crear. Es una primera prueba sencilla, no una garantía de solución.
+2. **MPQ y SQL deben coincidir.** Los MPQ contienen recursos y tablas del cliente; no crean los objetos en el servidor. El servidor necesita la fila correspondiente en `item_template`. Instala el SQL de la misma release solo después de que el administrador confirme que es compatible con el core y el esquema de base de datos. Mezclar versiones puede dejar IDs desalineados.
+3. **Tablas completas, no una integración universal.** La release v1.0.2 incluye datos de `Item.dbc` y `ItemDisplayInfo.dbc` preparados con el cliente usado para construir el paquete. Si esos archivos sustituyen las tablas del jugador, pueden no incluir otras entradas de su cliente o de otros parches de CoA. Esta es una limitación del empaquetado actual; borrar Cache o importar SQL no la corrige.
+4. **Orden de carga de los MPQ.** Si un parche que se carga después contiene `Item.dbc` o `ItemDisplayInfo.dbc`, puede prevalecer sobre las tablas de este módulo. No cambies nombres de MPQ al azar: eso no garantiza el orden correcto y puede causar otros conflictos. Si ya existe un archivo con el mismo nombre o el cliente usa otros parches de CoA, detén la instalación hasta confirmar la compatibilidad.
+5. **`patch-NAI.MPQ`.** No forma parte de los ocho MPQ publicados en esta release (NAA–NAH). Las antiguas instrucciones que pedían conservar `patch-NAI.MPQ` eran específicas de otra configuración local y no deben interpretarse como un requisito de una instalación limpia.
+6. **Descarga incompleta o archivo dañado.** Es otra posibilidad, pero no hay evidencia de que sea la causa en un caso concreto. Si sospechas de ello, vuelve a descargar los archivos de la misma release y compara sus hashes con `SHA256SUMS.txt`, si está disponible.
+
+**Limitación conocida:** la v1.0.2 no está validada para todas las combinaciones de cliente CoA, CoA Server Manager y parches adicionales. La solución definitiva para instalaciones incompatibles requiere reconstruir/integrar las tablas de objetos para el cliente objetivo y probarlas en juego. La documentación no sustituye esa validación.
+
 ### Solución de objetos que aparecen como ?
 
 - Borra Cache con el cliente cerrado y vuelve a iniciar.
