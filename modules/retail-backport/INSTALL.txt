@@ -1,0 +1,41 @@
+CoA RETAIL BACKPORT — INSTALACIÓN Y SOLUCIÓN DE OBJETOS «?»
+Versión de referencia: retail-backport-coa-v1.0.2
+
+IMPORTANTE
+Los ocho MPQ son archivos del CLIENTE. No crean por sí solos los objetos en el servidor.
+El SQL item_template.sql debe corresponder exactamente a esta misma versión de MPQ.
+No mezcles archivos de distintas releases ni asumas que este paquete sirve para cualquier cliente CoA.
+
+INSTALACIÓN DEL CLIENTE
+1. Cierra por completo WoW y el launcher.
+2. Descarga patch-NAA.MPQ, patch-NAB.MPQ, patch-NAC.MPQ, patch-NAD.MPQ,
+   patch-NAE.MPQ, patch-NAF.MPQ, patch-NAG.MPQ y patch-NAH.MPQ de una misma release.
+3. Copia los ocho archivos a la carpeta Data del cliente compatible conservando sus nombres.
+4. Si ya existe un archivo con el mismo nombre, detente y resuelve el conflicto antes de sobrescribirlo.
+   No reemplaces a ciegas otros parches de CoA.
+5. Con el juego cerrado, elimina la carpeta Cache del cliente. WoW la volverá a crear.
+6. Inicia el juego y prueba varios objetos.
+
+SQL DEL SERVIDOR
+El administrador debe revisar item_template.sql y confirmar su compatibilidad con el core y el esquema
+de base de datos antes de importarlo en la base de datos world correcta. El SQL no se ejecuta solo.
+Los MPQ y el SQL deben ser de la misma release y sus IDs deben coincidir.
+
+SI UN OBJETO APARECE COMO «?»
+1. Cierra el juego y limpia Cache.
+2. Confirma que instalaste los ocho MPQ de la misma release.
+3. Confirma con el administrador que se aplicó el SQL de esa misma release y que item_template contiene
+   la entry del objeto.
+4. Comprueba si otro MPQ cargado después contiene Item.dbc o ItemDisplayInfo.dbc y sobrescribe las tablas.
+   Un parche posterior puede ganar según el orden de carga. No renombres MPQ al azar para intentar arreglarlo.
+5. Si sigue ocurriendo, registra la versión/build del cliente, la entry del objeto, los nombres de los MPQ
+   instalados y si se importó el SQL.
+
+LIMITACIONES
+Las tablas de objetos de este paquete se prepararon a partir del cliente usado para construirlo.
+Pueden reemplazar tablas de otra build o de otros parches de CoA; no se garantiza compatibilidad universal.
+Borrar Cache solo elimina datos temporales obsoletos: no corrige IDs que no coinciden, SQL ausente ni
+tablas sobrescritas por otro parche.
+
+Créditos: Gamers66666 y el equipo del servidor CoA.
+Paquete comunitario no oficial; los recursos originales conservan los términos de sus titulares.
