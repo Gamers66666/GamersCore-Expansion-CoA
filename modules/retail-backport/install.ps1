@@ -38,7 +38,7 @@ if ($collisions.Count -gt 0) {
 }
 
 Write-Host ''
-Write-Host 'Retail Backport for CoA — WoW 3.3.5a' -ForegroundColor Cyan
+Write-Host 'CoA — 17,000+ Converted Items' -ForegroundColor Cyan
 Write-Host 'English: close the game and confirm the destination folder.' -ForegroundColor Yellow
 Write-Host 'Español: cierra el juego y confirma la carpeta de destino.' -ForegroundColor Yellow
 Write-Host "Client Data / Datos del cliente: $ClientData"
