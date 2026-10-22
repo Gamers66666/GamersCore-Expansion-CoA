@@ -79,3 +79,9 @@ El archivo item_template.sql de esta versión está destinado al administrador d
 - **Gamers66666** — integración, empaquetado y documentación de este módulo para CoA.
 
 Paquete comunitario no oficial. Los recursos originales siguen sujetos a los términos de sus respectivos creadores y titulares de derechos.
+
+
+## Corrected standalone installation guide / Guía de instalación corregida
+
+- English and Spanish: [INSTALL.txt](INSTALL.txt)
+- The guide explains cache cleanup, MPQ/SQL version matching, table overrides, and troubleshooting items displayed as `?`.
