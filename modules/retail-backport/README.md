@@ -1,10 +1,10 @@
-# CoA — 17,000+ converted items for WoW 3.3.5a / Más de 17.000 objetos convertidos
+# CoA — 17,000+ converted items / Más de 17.000 objetos convertidos
 
 [English](#english) | [Español](#español)
 
 ## English
 
-Download the eight ready-to-use MPQ files from the **Releases** page and copy them directly into your WoW 3.3.5a client's `Data` folder. The MPQ files already have their final names: **do not rename them**.
+This package is prepared for the CoA server community. Download the eight ready-to-use MPQ files from the **Releases** page and copy them into the compatible client's `Data` folder. The MPQ files already have their final names: **do not rename them**.
 
 ### Installation
 1. Close the game.
@@ -16,17 +16,17 @@ Download the eight ready-to-use MPQ files from the **Releases** page and copy th
 No repacking or installer is required. The eight-file mapping was tested by the package maintainer in the target client; results may vary by client/server setup.
 
 ### Optional SQL
-`item_template.sql` is optional and intended for server administrators. It is not required to use the MPQ files. Review compatibility with your core and database before importing; it is not run automatically.
+`item_template.sql` is optional and intended for CoA server administrators. It is not required to use the MPQ files. Review compatibility with the server core and database before importing; it is not run automatically.
 
 ### Credits
-- Conversion tool: [Kirazul — wow-retail-backport](https://github.com/Kirazul/wow-retail-backport).
-- CoA integration and package documentation: Gamers66666.
+- **CoA server creators and development team** — original server project and community.
+- **Gamers66666** — integration, packaging, and documentation for this CoA module.
 
-Unofficial community project. Original resources remain subject to their respective creators' and rights holders' terms.
+Unofficial community package. Original resources remain subject to their respective creators' and rights holders' terms.
 
 ## Español
 
-Descarga los ocho archivos MPQ listos para usar desde **Releases** y cópialos directamente en la carpeta `Data` de tu cliente WoW 3.3.5a. Los MPQ ya tienen sus nombres finales: **no los renombres**.
+Este paquete está preparado para la comunidad del servidor CoA. Descarga los ocho archivos MPQ listos para usar desde **Releases** y cópialos en la carpeta `Data` del cliente compatible. Los MPQ ya tienen sus nombres finales: **no los renombres**.
 
 ### Instalación
 1. Cierra el juego.
@@ -38,10 +38,10 @@ Descarga los ocho archivos MPQ listos para usar desde **Releases** y cópialos d
 No necesitas volver a empaquetar los MPQ ni usar un instalador. La correspondencia de los ocho archivos fue probada por el responsable del paquete en el cliente de destino; los resultados pueden variar según la instalación del cliente/servidor.
 
 ### SQL opcional
-`item_template.sql` es opcional y está destinado a administradores de servidores. No es necesario para usar los MPQ. Revisa la compatibilidad con tu core y base de datos antes de importarlo; no se ejecuta automáticamente.
+`item_template.sql` es opcional y está destinado a los administradores del servidor CoA. No es necesario para usar los MPQ. Revisa la compatibilidad con el core y la base de datos del servidor antes de importarlo; no se ejecuta automáticamente.
 
 ### Créditos
-- Herramienta de conversión: [Kirazul — wow-retail-backport](https://github.com/Kirazul/wow-retail-backport).
-- Integración para CoA y documentación del paquete: Gamers66666.
+- **Creadores y equipo de desarrollo del servidor CoA** — proyecto original del servidor y comunidad.
+- **Gamers66666** — integración, empaquetado y documentación de este módulo para CoA.
 
-Proyecto comunitario no oficial. Los recursos originales siguen sujetos a los términos de sus respectivos creadores y titulares de derechos.
+Paquete comunitario no oficial. Los recursos originales siguen sujetos a los términos de sus respectivos creadores y titulares de derechos.
