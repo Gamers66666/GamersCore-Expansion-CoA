@@ -1,64 +1,44 @@
 # CoA — 17,000+ Converted Items
 
-> **17,000+ items adapted for CoA. One community package, eight MPQ files, plus optional SQL data.**  
-> **Más de 17.000 objetos adaptados para CoA. Un paquete comunitario, ocho archivos MPQ y datos SQL opcionales.**
+> **English:** 17,000+ converted items for CoA, distributed as eight MPQ files and optional SQL data.  
+> **Español:** Más de 17.000 objetos convertidos para CoA, distribuidos en ocho archivos MPQ y datos SQL opcionales.
 
-This community package brings together converted item/model resources for the CoA client. The package maintainer reports that the eight-MPQ configuration has been tested in the target client. This does **not** mean every item has been individually tested or that every item is guaranteed to display perfectly on every client setup.
+This package contains converted item/model resources for the CoA client. The eight-MPQ configuration has been tested by the package maintainer in the target client, but not every item has been individually tested or is guaranteed to display perfectly on every setup.
 
-Este paquete comunitario reúne recursos de objetos y modelos convertidos para el cliente CoA. El responsable del paquete informa que la configuración de ocho MPQ fue probada en el cliente objetivo. Esto **no** significa que cada objeto se haya probado individualmente ni garantiza que todos se muestren perfectamente en cualquier instalación.
+Este paquete contiene recursos de objetos y modelos convertidos para el cliente CoA. El responsable del paquete ha probado la configuración de ocho MPQ en el cliente de destino, pero no se ha probado cada objeto individualmente ni se garantiza que todos se muestren perfectamente en cualquier instalación.
 
 ## Contents / Contenido
 
-Download all assets from the same release / Descarga todos los archivos de una misma versión:
-
-- `patch-0.MPQ`
-- `patch-1.MPQ`
-- `patch-6.MPQ`
-- `patch-7.MPQ`
-- `patch-8.MPQ`
-- `patch-9.MPQ`
-- `patch-D.MPQ`
-- `patch-GAM.MPQ`
-- `item_template.sql` — optional server database data / datos opcionales para la base de datos del servidor
-- `install.ps1` — installer / instalador
-- `INSTALL.txt` — quick instructions / instrucciones rápidas
-- `SHA256SUMS.txt` — file integrity checks / comprobaciones de integridad
+Download **all eight MPQ files from the same release**. The release also includes:
+- `item_template.sql` — optional server database data / datos opcionales para la base de datos del servidor.
+- `INSTALL.txt` — quick bilingual instructions / instrucciones breves en ambos idiomas.
+- `SHA256SUMS.txt` — SHA-256 integrity hashes / hashes SHA-256 para verificar la integridad.
 
 Do not mix files from different releases. / No mezcles archivos de versiones diferentes.
 
 ## Installation — English
 
-1. Close the client and launcher.
-2. Download all eight MPQ files from the same release and place them in one folder.
-3. Run PowerShell from the folder containing `install.ps1` and provide the real client `Data` folder and package folder. Example:
-
-   ```powershell
-   .\install.ps1 -ClientData "C:\Path\To\Client\Data" -PackageDirectory "C:\Path\To\Downloaded\Package"
-   ```
-
-4. Verify the destination path. Type `INSTALL` only if it is correct.
-5. The installer maps release filenames to the tested CoA client filenames. It stops if any destination file already exists and will not overwrite it.
-6. The SQL file is **not** executed by the installer. Review it and apply it only to a compatible CoA world database after checking compatibility and existing records. Do not import it blindly.
-7. Launch the client and test. If needed, remove only the eight files installed by this package, using the mapping below.
+1. Close the game client and launcher.
+2. Download the eight MPQ files from the same release and put them in a temporary folder.
+3. Open the target client's `Data` directory.
+4. Copy and rename the files exactly as shown in the table below. Do not rename or replace any other MPQ.
+5. If a destination filename already exists, stop and resolve the conflict manually; do not overwrite it blindly.
+6. The SQL file is optional and is **not** required just to install the client-side MPQ files. If you need the database records, inspect the SQL and confirm compatibility with your server/database before importing it. Do not import it blindly or into the wrong database.
+7. Start the client and test. If you need to uninstall the package, remove only the eight destination files listed in the table, and only if they are the files you added for this package.
 
 ## Instalación — Español
 
-1. Cierra el cliente y el launcher.
-2. Descarga los ocho MPQ de una misma versión y colócalos en una sola carpeta.
-3. Abre PowerShell en la carpeta donde está `install.ps1` e indica la carpeta `Data` real del cliente y la carpeta del paquete. Ejemplo:
-
-   ```powershell
-   .\install.ps1 -ClientData "C:\Ruta\Al\Cliente\Data" -PackageDirectory "C:\Ruta\Al\Paquete"
-   ```
-
-4. Comprueba la ruta de destino. Escribe `INSTALAR` únicamente si es correcta.
-5. El instalador asigna a los archivos los nombres utilizados en el cliente CoA probado. Se detiene si ya existe algún archivo de destino y no sobrescribe nada.
-6. El instalador **no ejecuta** el SQL. Revísalo y aplícalo únicamente a una base de datos world compatible de CoA, después de comprobar compatibilidad y registros existentes. No lo importes a ciegas.
-7. Inicia el cliente y prueba. Si fuera necesario, elimina únicamente los ocho archivos instalados por este paquete, siguiendo la tabla.
+1. Cierra el cliente del juego y el launcher.
+2. Descarga los ocho MPQ de una misma versión y colócalos en una carpeta temporal.
+3. Abre la carpeta `Data` del cliente de destino.
+4. Copia y renombra los archivos exactamente como indica la tabla. No renombres ni reemplaces ningún otro MPQ.
+5. Si ya existe un archivo con el nombre de destino, detente y resuelve el conflicto manualmente; no lo sobrescribas a ciegas.
+6. El SQL es opcional y **no es necesario** para instalar únicamente los MPQ del cliente. Si necesitas los registros de base de datos, revisa el SQL y confirma que sea compatible con tu servidor/base de datos antes de importarlo. No lo importes a ciegas ni en una base de datos incorrecta.
+7. Inicia el cliente y prueba. Para desinstalar el paquete, elimina únicamente los ocho archivos de destino de la tabla, y solo si son los archivos que añadiste con este paquete.
 
 ## MPQ filename mapping / Correspondencia de nombres
 
-| Release asset / Archivo de descarga | Client `Data` filename / Nombre en `Data` |
+| Release file / Archivo de descarga | Client `Data` filename / Nombre en `Data` |
 |---|---|
 | `patch-1.MPQ` | `patch-NAA.MPQ` |
 | `patch-GAM.MPQ` | `patch-NAB.MPQ` |
@@ -69,9 +49,11 @@ Do not mix files from different releases. / No mezcles archivos de versiones dif
 | `patch-D.MPQ` | `patch-NAG.MPQ` |
 | `patch-0.MPQ` | `patch-NAH.MPQ` |
 
+**Important / Importante:** This mapping preserves the configuration tested by the package maintainer. Do not modify `patch-NAI.MPQ` or the client's Cache folder. / Esta correspondencia conserva la configuración probada por el responsable del paquete. No modifiques `patch-NAI.MPQ` ni la carpeta Cache del cliente.
+
 ## Credits / Créditos
 
-- **Original conversion-tool creator / Creador original de la herramienta de conversión:** credit belongs to the author of the conversion tool used to generate these resources. Preserve the tool's original attribution when redistributing it. The creator's name or project link should be added here once confirmed.
+- **Conversion tool / Herramienta de conversión:** [Kirazul — wow-retail-backport](https://github.com/Kirazul/wow-retail-backport).
 - **CoA integration, package assembly and documentation / Integración para CoA, armado del paquete y documentación:** Gamers66666.
-- The package contains 17,000+ item records and associated converted resources. This count is not a claim that every item was individually tested.
-- This is an unofficial community project. Original tools and assets remain the property of their respective creators and rights holders.
+- The package contains 17,000+ item records and associated converted resources; this count does not mean every item was individually tested. / El paquete contiene más de 17.000 registros de objetos y recursos convertidos asociados; esta cifra no significa que se haya probado cada objeto individualmente.
+- Unofficial community project. Original tools and assets remain subject to their respective creators' and rights holders' terms. / Proyecto comunitario no oficial. Las herramientas y recursos originales siguen sujetos a los términos de sus respectivos creadores y titulares de derechos.
