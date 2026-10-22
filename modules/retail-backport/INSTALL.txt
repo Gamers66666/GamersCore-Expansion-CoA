@@ -21,6 +21,19 @@ El administrador debe revisar item_template.sql y confirmar su compatibilidad co
 de base de datos antes de importarlo en la base de datos world correcta. El SQL no se ejecuta solo.
 Los MPQ y el SQL deben ser de la misma release y sus IDs deben coincidir.
 
+CAUSAS PROBABLES Y LIMITACIÓN CONOCIDA
+El símbolo «?» puede deberse a caché antigua, SQL ausente/incompatible, IDs distintos o tablas
+Item.dbc / ItemDisplayInfo.dbc sobrescritas por otro MPQ. Una descarga incompleta también es posible,
+pero no debe darse por confirmada sin comprobar los archivos.
+
+La release v1.0.2 incluye tablas construidas a partir del cliente del responsable y NO está validada
+para todas las instalaciones CoA/CoA Server Manager. Un parche posterior puede sustituir las tablas.
+La solución definitiva para clientes incompatibles requiere reconstruir e integrar las tablas para
+el cliente objetivo y probar el resultado en juego; limpiar Cache no arregla ese problema.
+
+patch-NAI.MPQ NO es uno de los ocho archivos de esta release (NAA–NAH). La instrucción antigua
+sobre conservarlo era específica de otra instalación y no es un requisito para clientes limpios.
+
 SI UN OBJETO APARECE COMO «?»
 1. Cierra el juego y limpia Cache.
 2. Confirma que instalaste los ocho MPQ de la misma release.
